@@ -5,7 +5,9 @@ import { setUser } from "../store/actions";
 
 const User = () => {
   const [name, setName] = useState("");
-  const name2 =  useSelector((state: any) => state.user!=null?state.user.name:"");
+  const name2 = useSelector((state: any) =>
+    state.user != null ? state.user.name : ""
+  );
   const dispatch = useDispatch();
 
   const handleSaveUser = () => {

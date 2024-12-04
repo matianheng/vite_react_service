@@ -8,17 +8,23 @@ import history from "./router/navigation.ts"; // 导入封装的 history
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./store";
+import {Button} from 'element-react';
+
+import 'element-theme-default';
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <React.StrictMode>
-        <HistoryRouter history={history}>
-          <AppRoutes />
-        </HistoryRouter>
-      </React.StrictMode>
-    </PersistGate>
-  </Provider>
+ 
+    <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <React.StrictMode>
+            <HistoryRouter history={history}>
+                <AppRoutes />
+            </HistoryRouter>
+          </React.StrictMode>
+        </PersistGate>
+      </Provider>
+
+ 
 );
 
 // ReactDOM.createRoot(document.getElementById('root')!).render(
